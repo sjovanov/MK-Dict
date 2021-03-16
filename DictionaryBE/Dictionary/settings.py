@@ -45,7 +45,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
-    'words'
+    'words',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -95,6 +96,11 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.isAuthenticated',
+    ]
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
